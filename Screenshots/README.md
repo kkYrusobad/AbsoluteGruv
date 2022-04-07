@@ -1,0 +1,2 @@
+## Obs SS
+![](obsidian.png)
