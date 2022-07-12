@@ -760,6 +760,23 @@ body div.oz-image-widget>img:active {
     border: none
 }
 
+/* remove collapsed panes' borders */ /* @dxps' suggestion */
+
+body:not(.collapsed-borders) .workspace-ribbon.mod-left.is-collapsed {
+    border-right-color: var(--background-secondary-alt);
+}
+
+body:not(.collapsed-borders) .workspace-ribbon.mod-right.is-collapsed {
+    border-left-color: var(--background-secondary-alt);
+}
+
+/* remove status bar border */ /* @dxps' suggestion */
+
+body:not(.status-bar-border) .status-bar {
+    border-top-color: var(--background-secondary-alt);
+}
+
+
 /*img{
     margin-left: initial;
 }*/
@@ -815,5 +832,17 @@ settings:
      title: Re-enable Scrollbars
      type: class-toggle
      description: When false, only the scroll bars in the Editor are shown.
+     default: false
+    - 
+     id: collapsed-borders
+     title: Re-enable collapsed panes' borders
+     type: class-toggle
+     description: When false, collapsed panes' borders won't show.
+     default: false
+    -
+     id: status-bar-border
+     title: Re-enable status bar border
+     type: class-toggle
+     description: When false, status bar's border won't show.
      default: false
 */
