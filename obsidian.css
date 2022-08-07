@@ -418,6 +418,10 @@ thead
     padding-right: 0px;
 }
 
+.workspace-tabs .workspace-leaf {
+    border:  transparent;
+}
+
 .markdown-embed-title
 {
     font-weight: 600 !important;
