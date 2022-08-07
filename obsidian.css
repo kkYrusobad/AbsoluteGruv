@@ -287,7 +287,31 @@ thead
     color: var(--text-a) !important;
 }
 
-.nav-file-tag
+.nav-file, .nav-folder {
+  padding: 0px 2px;
+}
+
+.nav-file-title, .nav-folder-title {
+  width: 100%;
+  cursor: default;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-file .is-active {
+  --background-secondary-alt: var(--bg-dark);
+  --text-normal: #ebdbb2;
+}
+
+.nav-file-title-content, .nav-folder-title-content {
+  text-indent: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+
+/*.nav-file-tag
 {
     color: var(--text-a) !important;
 }
@@ -304,7 +328,7 @@ thead
     border-bottom-right-radius: 0 !important;
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
-}
+}*/
 
 /*img
 {
