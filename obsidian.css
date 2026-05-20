@@ -1,840 +1,568 @@
-/* 1. Font */
+/* ============================================================
+   AbsoluteGruv — Gruvbox Material Dark Soft
+   Updated for modern Obsidian (CM6 / v1.4+)
+   ============================================================ */
+
+/* ── 1. Fonts ─────────────────────────────────────────────── */
 body {
-    /* font stacks taken directly from Notion */
-    --font-monospace: "Source Code Pro", "Source Code Pro", "Source Code Pro";
-    -webkit-font-smoothing: auto;
+    --font-monospace-default: "Source Code Pro", monospace;
+    --font-text-theme:        "Source Code Pro", monospace;
+    -webkit-font-smoothing:   auto;
 }
 
-/* 2. Colours */
-:root
-{
-    /* 2.1 Dark theme color variables */
-    --bg0-dark:       #1d2021;
-    --bg1-dark:       #3c3836;
-    --bg-dark:        #282828;
-    --bg2-dark:       #504945;
-    --bg3-dark:       #665c54;
-    --bg4-dark:       #7c6f64;
-    --bg5-dark:       #928374;
-    --bg_visual:      #503946;
-    --bg_red:         #cc241d;
-    --bg_green:       #98971a;
-    --bg_blue:        #458588;
-    --bg_yellow:      #d79921;
-    --shadow:         #00000070;
+/* ── 2. Raw palette ───────────────────────────────────────── */
+:root {
+    /* Gruvbox Material Dark Soft backgrounds */
+    --gruv-bg0:     #1d2021;
+    --gruv-bg:      #282828;
+    --gruv-bg1:     #3c3836;
+    --gruv-bg2:     #504945;
+    --gruv-bg3:     #665c54;
+    --gruv-bg4:     #7c6f64;
+    --gruv-bg5:     #928374;
 
-    --fg-dark:        #ebdbb2;
-    --grey0-dark:     #7f897d;
-    --grey1-dark:     #859289;
-    --grey2-dark:     #9aa79d;
+    /* Gruvbox Material Dark Soft foregrounds */
+    --gruv-fg:      #ebdbb2;
+    --gruv-grey0:   #7f897d;
+    --gruv-grey1:   #859289;
+    --gruv-grey2:   #9aa79d;
 
-    --faded-red:     #fb4934;
-    --faded-orange:  #fe8019;
-    --faded-yellow:  #fabd2f;
-    --faded-green:   #b8bb26;
-    --faded-aqua:    #8ec07c;
-    --faded-blue:    #83a598;
-    --faded-purple:  #d3869b;
+    /* Vivid accent colours */
+    --gruv-red:     #fb4934;
+    --gruv-orange:  #fe8019;
+    --gruv-yellow:  #fabd2f;
+    --gruv-green:   #b8bb26;
+    --gruv-aqua:    #8ec07c;
+    --gruv-blue:    #83a598;
+    --gruv-purple:  #d3869b;
 
-    --dim-red:       #cc241d;
-    --dim-orange:    #d65d0e;
-    --dim-yellow:    #d79921;
-    --dim-green:     #98971a;
-    --dim-aqua:      #689d6a;
-    --dim-blue:      #458588;
-    --dim-purple:    #b16286;
+    /* Dimmed accent colours */
+    --gruv-dim-red:    #cc241d;
+    --gruv-dim-orange: #d65d0e;
+    --gruv-dim-yellow: #d79921;
+    --gruv-dim-green:  #98971a;
+    --gruv-dim-aqua:   #689d6a;
+    --gruv-dim-blue:   #458588;
+    --gruv-dim-purple: #b16286;
 
+    /* Misc */
+    --gruv-visual:  #503946;
+    --gruv-shadow:  #00000070;
 
-    /* 2.2 Light theme color variables */
-    --bg0-light:     #f0edd8;
-    --bg1-light:     #f6f1dd;
-    --bg-light:      #fdf6e3;
-    --bg2-light:     #f3efda;
-    --bg3-light:     #edead5;
-    --bg4-light:     #e4e1cd;
-    --bg5-light:     #dfdbc8;
-    --grey0-light:   #a4ad9e;
-    --grey1-light:   #939f91;
-    --grey2-light:   #879686;
-    --shadow-light:  #3c474d20;
+    /* Light palette */
+    --gruv-bg-l:    #fdf6e3;
+    --gruv-bg1-l:   #f6f1dd;
+    --gruv-bg2-l:   #f3efda;
+    --gruv-bg3-l:   #edead5;
+    --gruv-bg4-l:   #e4e1cd;
+    --gruv-bg5-l:   #dfdbc8;
+    --gruv-fg-l:    #5c6a72;
+    --gruv-grey1-l: #939f91;
 
-
-    --bg_visual_light:      #eaedc8;
-    --bg_red_light:         #fbe3da;
-    --bg_green_light:       #f0f1d2;
-    --bg_blue_light:        #e9f0e9;
-    --bg_yellow_light:      #faedcd;
-
-    --fg-light:       #5c6a72;
-
-    --light-red:     #f85552;
-    --light-orange:  #f57d26;
-    --light-yellow:  #bf983d;
-    --light-green:   #899c40;
-    --light-aqua:    #569d79;
-    --light-blue:    #5a93a2;
-    --light-purple:  #b87b9d;
-
-    --light-dim-red:    #f1706f;
-    --light-dim-orange: #f39459;
-    --light-dim-yellow: #e4b649;
-    --light-dim-green:  #a4bb4a;
-    --light-dim-aqua:   #6ec398;
-    --light-dim-blue:   #6cb3c6;
-    --light-dim-purple: #e092be;
-
-
+    --gruv-light-red:    #f85552;
+    --gruv-light-orange: #f57d26;
+    --gruv-light-yellow: #bf983d;
+    --gruv-light-green:  #899c40;
+    --gruv-light-aqua:   #569d79;
+    --gruv-light-blue:   #5a93a2;
+    --gruv-light-purple: #b87b9d;
 }
 
-/* 2.3 Dark theme implementation */
-.theme-dark
-{
-    --background-primary:         var(--bg-dark);
-    --background-primary-alt:     var(--bg-dark);
-    --background-secondary:       var(--bg-dark);
-    --background-secondary-alt:   var(--bg-dark);
-    --text-normal:                var(--fg-dark);
-    --text-faint:                 var(--grey1-dark);
-    --text-title-h1:              var(--dim-red);
-    --text-title-h2:              var(--dim-orange);
-    --text-title-h3:              var(--dim-yellow);
-    --text-title-h4:              var(--dim-green);
-    --text-title-h5:              var(--dim-aqua);
-    --text-title-h6:              var(--dim-purple);
-    --text-link:                  var(--faded-blue);
-    --text-a:                     var(--dim-aqua);
-    --text-a-hover:               var(--faded-aqua);
-    --text-mark:                  rgba(215, 153, 33, 0.4); /* light-yellow */
-    --pre-code:                   var(--bg1-dark);
-    --text-highlight-bg:          var(--bg_green);
-    --interactive-accent:         var(--dim-aqua);
-    --interactive-before:         var(--bg5-dark);
-    --background-modifier-border: var(--bg5-dark);
-    --text-accent:                var(--dim-blue);
-    --interactive-accent-rgb:     var(--dim-blue);
-    --inline-code:                var(--dim-blue);
-    --code-block:                 var(--fg-dark);
-    --vim-cursor:                 var(--faded-blue);
-    --text-selection:             var(--bg5-dark);
+/* ── 3. Dark theme ────────────────────────────────────────── */
+.theme-dark {
+    /* ── Base color scale (Obsidian v1.4+ system) */
+    --color-base-00:  var(--gruv-bg0);
+    --color-base-05:  #222526;
+    --color-base-10:  var(--gruv-bg);
+    --color-base-20:  #2e2c2b;
+    --color-base-25:  var(--gruv-bg1);
+    --color-base-30:  #46403d;
+    --color-base-35:  var(--gruv-bg2);
+    --color-base-40:  var(--gruv-bg3);
+    --color-base-50:  var(--gruv-bg4);
+    --color-base-60:  var(--gruv-bg5);
+    --color-base-70:  var(--gruv-grey1);
+    --color-base-100: var(--gruv-fg);
+
+    /* ── Extended colours */
+    --color-red:    var(--gruv-red);
+    --color-orange: var(--gruv-orange);
+    --color-yellow: var(--gruv-yellow);
+    --color-green:  var(--gruv-green);
+    --color-cyan:   var(--gruv-aqua);
+    --color-blue:   var(--gruv-blue);
+    --color-purple: var(--gruv-purple);
+
+    /* ── Accent (HSL of --gruv-aqua #8ec07c) */
+    --accent-h: 107;
+    --accent-s: 30%;
+    --accent-l: 62%;
+
+    /* ── Surfaces */
+    --background-primary:               var(--gruv-bg);
+    --background-primary-alt:           var(--gruv-bg0);
+    --background-secondary:             var(--gruv-bg0);
+    --background-secondary-alt:         var(--gruv-bg0);
+    --background-modifier-hover:        rgba(92,84,76,0.35);
+    --background-modifier-active-hover: rgba(92,84,76,0.5);
+    --background-modifier-border:       var(--gruv-bg2);
+    --background-modifier-border-hover: var(--gruv-bg3);
+    --background-modifier-border-focus: var(--gruv-dim-aqua);
+    --background-modifier-form-field:   var(--gruv-bg1);
+
+    /* ── Text */
+    --text-normal:        var(--gruv-fg);
+    --text-muted:         var(--gruv-grey2);
+    --text-faint:         var(--gruv-grey1);
+    --text-accent:        var(--gruv-dim-aqua);
+    --text-accent-hover:  var(--gruv-aqua);
+    --text-on-accent:     var(--gruv-bg);
+    --text-selection:     rgba(80,73,69,0.7);
+    --text-highlight-bg:  rgba(215,153,33,0.25);
+
+    /* ── Links */
+    --link-color:              var(--gruv-dim-aqua);
+    --link-color-hover:        var(--gruv-aqua);
+    --link-decoration:         none;
+    --link-decoration-hover:   underline;
+    --link-external-color:     var(--gruv-blue);
+    --link-external-color-hover: var(--gruv-aqua);
+    --link-external-decoration: none;
+    --link-unresolved-color:   var(--gruv-grey2);
+    --link-unresolved-opacity: 0.8;
+
+    /* ── Headings */
+    --h1-color: var(--gruv-dim-red);
+    --h2-color: var(--gruv-dim-orange);
+    --h3-color: var(--gruv-dim-yellow);
+    --h4-color: var(--gruv-dim-green);
+    --h5-color: var(--gruv-dim-aqua);
+    --h6-color: var(--gruv-dim-purple);
+
+    --h1-size:   2.0em;
+    --h2-size:   1.6em;
+    --h3-size:   1.35em;
+    --h4-size:   1.2em;
+    --h5-size:   1.1em;
+    --h6-size:   1.0em;
+
+    --h1-weight: 500;
+    --h2-weight: 500;
+    --h3-weight: 500;
+    --h4-weight: 500;
+    --h5-weight: 500;
+    --h6-weight: 500;
+
+    /* ── Code */
+    --code-background:  var(--gruv-bg1);
+    --code-normal:      var(--gruv-fg);
+    --code-comment:     var(--gruv-grey1);
+    --code-function:    var(--gruv-green);
+    --code-important:   var(--gruv-red);
+    --code-keyword:     var(--gruv-red);
+    --code-operator:    var(--gruv-aqua);
+    --code-property:    var(--gruv-blue);
+    --code-punctuation: var(--gruv-fg);
+    --code-string:      var(--gruv-yellow);
+    --code-tag:         var(--gruv-orange);
+    --code-value:       var(--gruv-purple);
+    --code-size:        0.9em;
+
+    /* ── Interactive */
+    --interactive-normal:       var(--gruv-bg1);
+    --interactive-hover:        var(--gruv-bg2);
+    --interactive-accent:       var(--gruv-dim-aqua);
+    --interactive-accent-hover: var(--gruv-aqua);
+
+    /* ── Caret */
+    --caret-color: var(--gruv-blue);
+
+    /* ── Tag */
+    --tag-color:              var(--gruv-fg);
+    --tag-background:         rgba(69,133,136,0.2);
+    --tag-background-hover:   rgba(69,133,136,0.35);
+    --tag-border-color:       var(--gruv-dim-blue);
+    --tag-border-color-hover: var(--gruv-blue);
+
+    /* ── Scrollbar */
+    --scrollbar-bg:     transparent;
+    --scrollbar-thumb-bg: var(--gruv-bg3);
+
+    /* Legacy compat (some plugins still read these) */
+    --text-a:      var(--gruv-dim-aqua);
+    --text-a-hover: var(--gruv-aqua);
+    --text-link:   var(--gruv-blue);
+    --inline-code: var(--gruv-blue);
+    --pre-code:    var(--gruv-bg1);
+    --code-block:  var(--gruv-fg);
+    --vim-cursor:  var(--gruv-blue);
+    --text-mark:   rgba(215,153,33,0.25);
 }
 
-/* 2.4 Light theme implementation */
-.theme-light
-{
-    --background-primary:         var(--bg-light);
-    --background-primary-alt:     var(--bg-light);
-    --background-secondary:       var(--bg-light);
-    --background-secondary-alt:   var(--bg-light);
-    --text-normal:                var(--fg-light);
-    --text-faint:                 var(--grey1-light);
-    --text-title-h1:              var(--light-red);
-    --text-title-h2:              var(--light-orange);
-    --text-title-h3:              var(--light-yellow);
-    --text-title-h4:              var(--light-green);
-    --text-title-h5:              var(--light-aqua);
-    --text-title-h6:              var(--light-purple);
-    --text-link:                  var(--light-blue);
-    --text-a:                     var(--light-dim-blue);
-    --text-a-hover:               var(--light-blue);
-    --text-mark:                  rgba(215, 153, 33, 0.4); /* light-yellow */
-    --pre-code:                   var(--bg1-light);
-    --text-highlight-bg:          var(--light-dim-green);
-    --interactive-accent:         var(--bg5-light);
-    --interactive-before:         var(--bg5-light);
-    --background-modifier-border: var(--bg5-light);
-    --text-accent:                var(--bg5-light);
-    --interactive-accent-rgb:     var(--light-dim-green);
-    --inline-code:                var(--light-blue);
-    --code-block:                 var(--fg-light);
-    --vim-cursor:                 var(--light-blue);
-    --text-selection:             rgba(189, 174, 147, 0.5); /* light3 */
+/* ── 4. Light theme ───────────────────────────────────────── */
+.theme-light {
+    --color-base-00:  var(--gruv-bg-l);
+    --color-base-05:  var(--gruv-bg1-l);
+    --color-base-10:  var(--gruv-bg2-l);
+    --color-base-20:  var(--gruv-bg3-l);
+    --color-base-25:  var(--gruv-bg4-l);
+    --color-base-30:  var(--gruv-bg5-l);
+    --color-base-35:  #d4cebe;
+    --color-base-40:  #b8b2a5;
+    --color-base-50:  var(--gruv-grey1-l);
+    --color-base-60:  #7d8681;
+    --color-base-70:  #677269;
+    --color-base-100: var(--gruv-fg-l);
+
+    --accent-h: 107;
+    --accent-s: 28%;
+    --accent-l: 40%;
+
+    --background-primary:             var(--gruv-bg-l);
+    --background-primary-alt:         var(--gruv-bg1-l);
+    --background-secondary:           var(--gruv-bg2-l);
+    --background-secondary-alt:       var(--gruv-bg3-l);
+    --background-modifier-hover:      rgba(180,170,140,0.3);
+    --background-modifier-border:     var(--gruv-bg5-l);
+    --background-modifier-form-field: var(--gruv-bg1-l);
+
+    --text-normal:       var(--gruv-fg-l);
+    --text-muted:        var(--gruv-grey1-l);
+    --text-faint:        #a4ad9e;
+    --text-accent:       var(--gruv-light-blue);
+    --text-accent-hover: var(--gruv-light-aqua);
+    --text-selection:    rgba(189,174,147,0.45);
+    --text-highlight-bg: rgba(215,153,33,0.25);
+
+    --link-color:             var(--gruv-light-blue);
+    --link-color-hover:       var(--gruv-light-aqua);
+    --link-decoration:        none;
+    --link-decoration-hover:  underline;
+    --link-external-color:    var(--gruv-light-blue);
+    --link-unresolved-color:  var(--gruv-grey1-l);
+    --link-unresolved-opacity: 0.75;
+
+    --h1-color: var(--gruv-light-red);
+    --h2-color: var(--gruv-light-orange);
+    --h3-color: var(--gruv-light-yellow);
+    --h4-color: var(--gruv-light-green);
+    --h5-color: var(--gruv-light-aqua);
+    --h6-color: var(--gruv-light-purple);
+
+    --h1-size:   2.0em;
+    --h2-size:   1.6em;
+    --h3-size:   1.35em;
+    --h4-size:   1.2em;
+    --h5-size:   1.1em;
+    --h6-size:   1.0em;
+
+    --h1-weight: 500;
+    --h2-weight: 500;
+    --h3-weight: 500;
+    --h4-weight: 500;
+    --h5-weight: 500;
+    --h6-weight: 500;
+
+    --code-background:  var(--gruv-bg1-l);
+    --code-normal:      var(--gruv-fg-l);
+    --code-comment:     var(--gruv-grey1-l);
+    --code-function:    var(--gruv-light-green);
+    --code-important:   var(--gruv-light-red);
+    --code-keyword:     var(--gruv-light-red);
+    --code-operator:    var(--gruv-light-aqua);
+    --code-property:    var(--gruv-light-blue);
+    --code-punctuation: var(--gruv-fg-l);
+    --code-string:      var(--gruv-light-yellow);
+    --code-tag:         var(--gruv-light-orange);
+    --code-value:       var(--gruv-light-purple);
+    --code-size:        0.9em;
+
+    --interactive-normal:       var(--gruv-bg1-l);
+    --interactive-hover:        var(--gruv-bg2-l);
+    --interactive-accent:       var(--gruv-light-aqua);
+    --interactive-accent-hover: var(--gruv-light-blue);
+
+    --caret-color: var(--gruv-light-blue);
+
+    --tag-color:              var(--gruv-fg-l);
+    --tag-background:         rgba(86,157,121,0.15);
+    --tag-background-hover:   rgba(86,157,121,0.3);
+    --tag-border-color:       var(--gruv-light-aqua);
+
+    /* Legacy compat */
+    --inline-code: var(--gruv-light-blue);
+    --pre-code:    var(--gruv-bg1-l);
+    --code-block:  var(--gruv-fg-l);
+    --vim-cursor:  var(--gruv-light-blue);
 }
 
-.theme-dark code[class*="language-"],
-.theme-dark pre[class*="language-"],
-.theme-light code[class*="language-"],
-.theme-light pre[class*="language-"]
-{
-    text-shadow: none !important;
-    background-color: var(--pre-code) !important;
+/* ── 5. Typography ────────────────────────────────────────── */
+html, body { font-size: 16px; }
+
+strong { font-weight: 600; }
+
+/* ── 6. Editor — CM6 selectors ───────────────────────────── */
+
+/* Inline code (CM6 editing view) */
+.cm-s-obsidian .cm-inline-code {
+    color:            var(--gruv-blue);
+    background-color: var(--code-background);
+    border-radius:    3px;
+    padding:          1px 4px;
 }
 
-/* 3. General UI */
-.view-header-title {
-    font-weight: 700;
-  }
+/* Monospace for editor */
+.cm-editor, .cm-line {
+    font-family: var(--font-monospace-default);
+}
 
-  /* 3.1. Title bar */
-  .titlebar {
-    background-color: var(--background-secondary-alt);
-  }
+/* Bold text colour in editor */
+.cm-s-obsidian .cm-strong {
+    color: var(--gruv-fg);
+}
 
-  .titlebar-inner {
-    color: var(--text-normal);
-  }
+/* ── 7. Reading view ──────────────────────────────────────── */
 
+/* Inline code */
+.markdown-rendered code,
+.markdown-preview-view code {
+    font-size:        var(--code-size);
+    color:            var(--gruv-blue);
+    background-color: var(--code-background);
+    border-radius:    3px;
+    padding:          1px 4px;
+}
+
+/* Code blocks */
+.markdown-rendered pre code,
+.markdown-preview-view pre code {
+    font-size:   var(--code-size);
+    color:       var(--code-normal);
+    background:  transparent;
+    padding:     0;
+    border-radius: 0;
+}
+
+.markdown-rendered pre,
+.markdown-preview-view pre {
+    background-color: var(--code-background);
+    border-radius:    6px;
+    padding:          12px 16px;
+}
+
+/* Bold in reading view */
+.markdown-rendered strong,
+.markdown-preview-view strong {
+    color:       var(--gruv-fg);
+    font-weight: 600;
+}
+
+/* Mark / highlight */
+.markdown-rendered mark,
+.markdown-preview-view mark {
+    background-color: var(--text-highlight-bg);
+    color: inherit;
+}
+
+/* ── 8. Links ─────────────────────────────────────────────── */
+/* Variables handle most link styling; these guard edge-cases */
+a.internal-link,
+.cm-hmd-internal-link { text-decoration: none; }
+
+/* ── 9. Graph ─────────────────────────────────────────────── */
 .graph-view.color-circle,
 .graph-view.color-fill-highlight,
-.graph-view.color-line-highlight
-{
-    color: var(--interactive-accent-rgb) !important;
-}
-.graph-view.color-text
-{
-    color: var(--text-a-hover) !important;
-}
-/*
-.graph-view.color-fill
-{
-    color: var(--background-secondary);
-}*/
-.graph-view.color-line
-{
-  color: #504945;
-}
+.graph-view.color-line-highlight { color: var(--gruv-dim-aqua) !important; }
 
+.graph-view.color-text { color: var(--gruv-aqua) !important; }
 
-html,
-body
-{
-    font-size: 16px !important;
-}
+.graph-view.color-line { color: var(--gruv-bg2) !important; }
 
-strong
-{
-    font-weight: 600 !important;
-}
+/* ── 10. Workspace chrome ─────────────────────────────────── */
 
-a,
-.cm-hmd-internal-link
-{
-    color: var(--text-a) !important;
-    text-decoration: none !important;
-}
-
-a:hover,
-.cm-hmd-internal-link:hover,
-.cm-url
-{
-    color: var(--text-a-hover) !important;
-    text-decoration: none !important;
-}
-
-mark
-{
-    background-color: var(--text-mark) !important;
-}
-
-.view-actions a
-{
-    color: var(--text-normal) !important;
-}
-
-.view-actions a:hover
-{
-    color: var(--text-a) !important;
-}
-
-.HyperMD-codeblock-bg
-{
-    background-color: var(--pre-code) !important;
-}
-
-.HyperMD-codeblock
-{
-    line-height: 1.4em !important;
-    color: var(--code-block) !important;
-}
-
-.HyperMD-codeblock-begin
-{
-    border-top-left-radius: 4px !important;
-    border-top-right-radius: 4px !important;
-}
-
-.HyperMD-codeblock-end
-{
-    border-bottom-left-radius: 4px !important;
-    border-bottom-right-radius: 4px !important;
-}
-
-th
-{
-    font-weight: 600 !important;
-}
-
-thead
-{
-    border-bottom: 2px solid var(--background-modifier-border) !important;
-}
-
-.HyperMD-table-row
-{
-    line-height: normal !important;
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-    /* background-color: var(--pre-code) !important; */
-}
-
-.HyperMD-table-row-0
-{
-    padding-top: 4px !important;
-}
-
-.CodeMirror-foldgutter-folded,
-.is-collapsed .nav-folder-collapse-indicator
-{
-    color: var(--text-a) !important;
-}
-
-.nav-file, .nav-folder {
-  padding: 0px 2px;
-}
-
-.nav-file-title, .nav-folder-title {
-  width: 100%;
-  cursor: default;
-  display: flex;
-  flex-direction: row;
-}
-
-.nav-file .is-active {
-  --background-secondary-alt: var(--bg-dark);
-  --text-normal: #ebdbb2;
-}
-
-.nav-file-title-content, .nav-folder-title-content {
-  text-indent: 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: block;
-}
-
-/*.nav-file-tag
-{
-    color: var(--text-a) !important;
-}
-
-.is-active .nav-file-title
-{
-    color: var(--text-a) !important;
-    background-color: var(--background-primary-alt) !important;
-}
-
-.nav-file-title
-{
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-}*/
-
-/*img
-{
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}*/
-
-.HyperMD-list-line
-{
-    padding-top: 0 !important;
-}
-
-.CodeMirror-code,
-.CodeMirror-linenumber,
-.cm-formatting
-{
-    font-family: var(--font-monospace) !important;
-    font-size: 0.9em;
-}
-
-.markdown-preview-section pre code,
-.markdown-preview-section code
-{
-    font-size: 0.9em !important;
-    background-color: var(--pre-code) !important;
-}
-
-.markdown-preview-section pre code
-{
-    padding: 4px !important;
-    line-height: 1.4em !important;
-    display: block !important;
-    color: var(--code-block) !important;
-}
-
-.markdown-preview-section code
-{
-    color: #83a598 !important;
-    background-color: #3c3836 !important;
-    padding: 3px !important;
-}
-
-.cm-s-obsidian,
-.cm-inline-code
-{
-    -webkit-font-smoothing: auto !important;
-}
-
-.cm-inline-code
-{
-    color: var(--inline-code) !important;
-    background-color: var(--pre-code) !important;
-    padding: 1px !important;
-}
-
-.workspace-leaf-header-title
-{
-    font-weight: 600 !important;
-}
-
-.side-dock-title
-{
-    padding-top: 15px !important;
-    font-size: 20px !important;
-}
-
-.side-dock-ribbon-tab:hover,
-.side-dock-ribbon-action:hover,
-.side-dock-ribbon-action.is-active:hover,
-.nav-action-button:hover,
-.side-dock-collapse-btn:hover
-{
-    color: var(--text-a);
-}
-
-.side-dock
-{
-    border-right: 0 !important;
-}
-
-.cm-s-obsidian,
-.markdown-preview-view
-{
-    /* padding-left: 10px !important; */
-    padding-right: 10px !important;
-}
-
-/* vertical resize-handle */
+/* Vertical resize handle */
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
-.workspace-split.mod-right-split > .workspace-leaf-resize-handle
-{
-    width: 1px !important;
-    background-color: var(--background-secondary-alt);
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+    width:            1px;
+    background-color: var(--background-modifier-border);
 }
 
-/* horizontal resize-handle */
-.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle
-{
-    height: 1px !important;
-    background-color: var(--background-secondary-alt);
+/* Horizontal resize handle */
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+    height:           1px;
+    background-color: var(--background-modifier-border);
 }
 
 /* Remove vertical split padding */
 .workspace-split.mod-root .workspace-split.mod-vertical .workspace-leaf-content,
 .workspace-split.mod-vertical > .workspace-split,
 .workspace-split.mod-vertical > .workspace-leaf,
-.workspace-tabs
-{
-    padding-right: 0px;
+.workspace-tabs { padding-right: 0; }
+
+.workspace-tabs .workspace-leaf { border-color: transparent; }
+
+/* ── 11. Sidebar / ribbon ─────────────────────────────────── */
+.workspace-ribbon { border-right: none; border-left: none; }
+
+.side-dock-title {
+    padding-top: 15px;
+    font-size:   20px;
 }
 
-.workspace-tabs .workspace-leaf {
-    border:  transparent;
+.nav-action-button:hover,
+.side-dock-ribbon-tab:hover,
+.side-dock-ribbon-action:hover,
+.side-dock-collapse-btn:hover { color: var(--text-accent); }
+
+/* Active nav file */
+.nav-file-title.is-active {
+    background-color: var(--background-modifier-hover);
+    color:            var(--text-normal);
+    border-radius:    4px;
 }
 
-.markdown-embed-title
-{
-    font-weight: 600 !important;
+.nav-file-title-content,
+.nav-folder-title-content {
+    white-space:   nowrap;
+    text-overflow: ellipsis;
+    overflow:      hidden;
 }
 
-.markdown-embed
-{
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-}
+/* ── 12. File header / tab title ──────────────────────────── */
+.view-header-title  { font-weight: 700; }
+.inline-title       { color: var(--h1-color); font-weight: 500; }
 
-.cm-header-1,
-.markdown-preview-section h1
-{
-    font-weight: 500 !important;
-    font-size: 34px !important;
-    color: var(--text-title-h1) !important;
-}
+/* ── 13. Tables ───────────────────────────────────────────── */
+th { font-weight: 600; }
+thead { border-bottom: 2px solid var(--background-modifier-border); }
 
-.cm-header-2,
-.markdown-preview-section h2
-{
-    font-weight: 500 !important;
-    font-size: 26px !important;
-    color: var(--text-title-h2) !important;
-}
-
-.cm-header-3,
-.markdown-preview-section h3
-{
-    font-weight: 500 !important;
-    font-size: 22px !important;
-    color: var(--text-title-h3) !important;
-}
-
-.cm-header-4,
-.markdown-preview-section h4
-{
-    font-weight: 500 !important;
-    font-size: 20px !important;
-    color: var(--text-title-h4) !important;
-}
-
-.cm-header-5,
-.markdown-preview-section h5
-{
-    font-weight: 500 !important;
-    font-size: 18px !important;
-    color: var(--text-title-h5) !important;
-}
-
-.cm-header-6,
-.markdown-preview-section h6
-{
-    font-weight: 500 !important;
-    font-size: 18px !important;
-    color: var(--text-title-h6) !important;
-}
-
-.suggestion-item.is-selected
-{
-    background-color: var(--text-selection);
-}
-
-.empty-state-container:hover
-{
-    background-color: var(--background-secondary-alt);
-    border: 5px solid var(--interactive-accent) !important;
-}
-
-.checkbox-container
-{
-    background-color: var(--interactive-before);
-}
-
-.checkbox-container:after
-{
-    background-color: var(--interactive-accent);
-}
-
-.mod-cta
-{
-    color: var(--background-secondary-alt) !important;
-    font-weight: 600 !important;
-}
-
-.mod-cta a
-{
-    color: var(--background-secondary-alt) !important;
-    font-weight: 600 !important;
-}
-
-.mod-cta:hover
-{
-    background-color: var(--interactive-before) !important;
-    font-weight: 600 !important;
-}
-
-.CodeMirror-cursor
-{
-    background-color: var(--vim-cursor) !important;
-    opacity: 60% !important;
-}
-
+/* ── 14. Checkboxes / task list ───────────────────────────── */
 input.task-list-item-checkbox {
-    border: 1px solid var(--faded-blue);
-    appearance: none;
+    border:             1px solid var(--gruv-blue);
+    appearance:         none;
     -webkit-appearance: none;
+    width:              16px;
+    height:             16px;
+    border-radius:      3px;
+    background:         transparent;
 }
 
-input.task-list-item-checkbox:checked
-{
-    background-color: var(--faded-blue);
-    box-shadow: inset 0 0 0 2px var(--background-primary);
+input.task-list-item-checkbox:checked {
+    background-color: var(--gruv-dim-blue);
+    box-shadow:       inset 0 0 0 2px var(--background-primary);
+    border-color:     var(--gruv-blue);
 }
 
-::selection
-{
-    background-color: var(--text-selection) !important;
+/* ── 15. Suggestion / autocomplete ───────────────────────── */
+.suggestion-item.is-selected {
+    background-color: var(--background-modifier-hover);
 }
 
-.mermaid .note
-{
-    fill: var(--dark3) !important;
+/* ── 16. Bullet relationship lines ────────────────────────── */
+.cm-hmd-list-indent .cm-tab { position: relative; }
+.cm-hmd-list-indent .cm-tab::before {
+    content:      '';
+    border-left:  1px solid var(--gruv-dim-blue);
+    position:     absolute;
+    left:         0;
+    top:          -5px;
+    bottom:       -4px;
 }
 
-.frontmatter-container {
-    display: none;
+ul ul { position: relative; }
+ul ul::before {
+    content:      '';
+    border-left:  1px solid var(--gruv-dim-blue);
+    position:     absolute;
+    left:         -11px;
+    top:          0;
+    bottom:       0;
 }
 
-/* Bullet point relationship lines */
-.cm-hmd-list-indent .cm-tab, ul ul { position: relative; }
-.cm-hmd-list-indent .cm-tab::before, ul ul::before {
- content:'';
- border-left: 1px solid var(--dim-blue);
- position: absolute;
-}
-.cm-hmd-list-indent .cm-tab::before { left: 0; top: -5px; bottom: -4px;
-}
-ul ul::before { left: -11px; top: 0; bottom: 0;
+/* ── 17. Embeds ───────────────────────────────────────────── */
+.markdown-embed-title { font-weight: 600; }
+
+.markdown-embed {
+    padding-left:  10px;
+    padding-right: 10px;
+    margin-left:   10px;
+    margin-right:  10px;
 }
 
-/*----------------------------------------------------------------------------------------*/
-/* ENhanced GRub */
-/*----------------------------------------------------------------------------------------*/
+/* ── 18. Selection ────────────────────────────────────────── */
+::selection { background-color: var(--text-selection); }
 
-/* sidebar tabs */
+/* ── 19. Properties (frontmatter) ─────────────────────────── */
+/* Hide raw frontmatter block in reading view (old compat) */
+.frontmatter-container { display: none; }
 
-body:not(.show-sidebar-tabs) .workspace-tab-header-container,
-body:not(.show-sidebar-tabs) .workspace-tab-header-container * {
-    transition: var(--medium-transition)
-}
+/* ── 20. Mermaid ──────────────────────────────────────────── */
+.mermaid { font-size: 0.9em; }
 
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:is(:hover *,
-:hover) {
-    transition: var(--quick-transition);
-    transition-delay: var(--transition-delay-passing-over-protection)
-}
+/* ── 21. Scrollbar ────────────────────────────────────────── */
+body:not(.show-scrollbar) ::-webkit-scrollbar { display: none; }
 
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) {
-    height: 11px;
-    box-shadow: var(--small-reverted-inset-shadow);
-    padding-top: 0;
-    padding-bottom: 0
-}
-
-body:not(.show-sidebar-tabs) .workspace-tabs:nth-child(3) .workspace-tab-header-container:not(:hover) {
-    box-shadow: var(--medium-reverted-inset-shadow)
-}
-
-body:not(.show-sidebar-tabs) .workspace-tabs:not(:nth-child(3)) .workspace-tab-header-container {
-    border-top: var(--basic-border)
-}
-
-body:not(.show-sidebar-tabs) .workspace-tabs.workspace-tabs.workspace-tabs.workspace-tabs .workspace-tab-header-container:hover {
-    height: 55px;
-    box-shadow: var(--big-reverted-inset-shadow);
-    padding-bottom: 4px
-}
-
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover .workspace-tab-header {
-    margin-top: 10px
-}
-
-body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header,
-body:not(.show-sidebar-tabs) .workspace-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header svg {
-    opacity: 0;
-    border: none
-}
-
-/* title bar showing */
-
-
-body:not(.show-titlebar) .titlebar {
-    display: none
-}
-
-.mod-macos:not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container {
-    height: calc(var(--mac-traffic-light-padding) + 37px);
-    padding-top: calc(var(--mac-traffic-light-padding) + 5px)
-}
-
-body.mod-macos:not(.show-titlebar) .workspace-split.mod-left-split.is-collapsed~.mod-root .workspace-leaf:nth-child(2) .view-header {
-    padding-left: 7vh
-}
-
-.theme-dark:not(.show-titlebar):not(.is-mobile),
-.theme-light:not(.show-titlebar):not(.is-mobile) {
-    padding: 0!important
-}
-
-/* code below breaks notifications */
-/*
-body:not(.show-titlebar) .workspace-ribbon.mod-left {
-    margin-top: calc(var(--mac-traffic-light-padding) + var(--normal-top-padding))
-}
-
-body:not(.show-titlebar) .workspace-ribbon.mod-right {
-    margin-top: var(--normal-top-padding)
-}
-
-body.show-titlebar .workspace-ribbon.mod-left {
-    margin-top: 0
-}
-
-body:not(.show-titlebar-text) .titlebar-text {
-    display: none
-}
-
-.titlebar-text {
-    font-family: var(--menu-font);
-    color: var(--text-normal);
-    margin-left: var(--cover-width);
-    --cover-width: 18ch
-}
-
-.titlebar-text::AFTER {
-    content: "                                       ";
-    white-space: pre-wrap;
-    background-color: var(--bg2);
-    margin-left: calc(var(--cover-width) * -1)
-}
-
-.titlebar {
-    background-color: var(--bg2);
-    border-bottom: var(--thin-border)
-}
-
-body:not(.show-titlebar) .workspace-ribbon-collapse-btn {
-    border-top: var(--basic-border)
-}
-
-.workspace-ribbon-collapse-btn svg {
-    stroke-width: 4px
-}
-
-body:not(.show-titlebar):not(.is-mobile)>div.notice-container {
-    top: 0
-}
-
-div.notice-container .notice {
-    font-family: var(--button-font);
-    font-size: calc(var(--button-font-size) * .9);
-    letter-spacing: .6px;
-    color: var(--text-normal);
-    background-color: var(--notice-bg);
-    box-shadow: var(--small-shadow), var(--notice-inset-shadow);
-    padding: 5px 12px 7px;
-    border: var(--notice-border);
-    border-radius: var(--roundish)
-}
-
-body.mod-macos:not(.show-sidebar-tabs):not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container:not(:hover) {
-    height: 17px
-}
-
-body.mod-macos:not(.show-sidebar-tabs):not(.show-titlebar) .mod-left-split .workspace-tabs:nth-child(3) .workspace-tab-header-container:hover .workspace-tab-header {
-    margin-top: 2px
-}*/
-
-/* show scrollbar */
-
-body:not(.show-scrollbar) ::-WEBKIT-SCROLLBAR {
-    display: none
-}
-
-body:not(.show-scrollbar) .workspace-split.mod-root .workspace-leaf-content[data-type=style-settings] ::-WEBKIT-SCROLLBAR {
-    display: none
-}
-
-.workspace-split.mod-root .workspace-leaf-content[data-type=style-settings] {
-    font-size: var(--menu-font-size)
-}
-
-.mod-root .workspace-leaf-content[data-type=style-settings] .view-content {
-    padding: 20px
-}
-
-/* images left ailgned */
-
-body:not(.left-aligned-embeds) .image-embed[alt]::AFTER {
-    text-align: center;
-    white-space: pre
-}
-
+/* ── 22. Image centering ──────────────────────────────────── */
 body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
     margin-right: auto;
-    margin-left: auto
+    margin-left:  auto;
+    display:      block;
 }
 
-body:not(.left-aligned-embeds) div.mermaid {
-    text-align: center
-}
+body:not(.left-aligned-embeds) div.mermaid { text-align: center; }
 
-.mermaid {
-    font-size: .9em;
-    --mermaid-font: var(--original-font)
-}
-
-.pdf-embed iframe {
-    border-radius: var(--roundish)
-}
-
-body:not(.left-aligned-embeds) .pdf-embed.pdf-embed {
-    margin-right: auto!important;
-    margin-left: auto!important
-}
-
-body:not(.left-aligned-embeds) :is(.oz-pdf-widget-cm6,
-div.oz-image-widget-cm6,
-div.oz-image-widget)>:is(embed,
-img) {
-    margin-right: auto;
-    margin-left: auto
-}
-
-body div.oz-image-widget>img:active {
-    border: none
-}
-
-/* remove collapsed panes' borders */ /* @dxps' suggestion */
-
+/* ── 23. Collapsed sidebar borders ───────────────────────── */
 body:not(.collapsed-borders) .workspace-ribbon.mod-left.is-collapsed {
     border-right-color: var(--background-secondary-alt);
 }
-
 body:not(.collapsed-borders) .workspace-ribbon.mod-right.is-collapsed {
     border-left-color: var(--background-secondary-alt);
 }
 
-/* remove status bar border */ /* @dxps' suggestion */
-
+/* ── 24. Status bar ───────────────────────────────────────── */
 body:not(.status-bar-border) .status-bar {
     border-top-color: var(--background-secondary-alt);
 }
 
+/* ── 25. CTA buttons ──────────────────────────────────────── */
+.mod-cta {
+    color:       var(--background-primary) !important;
+    font-weight: 600 !important;
+}
+.mod-cta:hover {
+    background-color: var(--interactive-accent-hover) !important;
+}
 
-/*img{
-    margin-left: initial;
-}*/
+/* ── 26. Titlebar (hidden by default) ────────────────────── */
+body:not(.show-titlebar) .titlebar { display: none; }
 
-/* bold color */
+.theme-dark:not(.show-titlebar):not(.is-mobile),
+.theme-light:not(.show-titlebar):not(.is-mobile) { padding: 0 !important; }
 
-strong,
-.cm-s-obsidian .cm-strong.cm-header,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-1,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-2,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-3,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-4,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-5,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-6,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-1,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-2,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-3,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-4,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-5,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-6,
-.cm-header.cm-header-3.cm-hmd-internal-link,
-.markdown-preview-section strong,
-.cm-s-obsidian .cm-strong {
-  color: #ebdbb2;
+/* ── 27. Sidebar tabs (auto-hide) ─────────────────────────── */
+body:not(.show-sidebar-tabs) .workspace-tab-header-container {
+    transition: height 150ms ease, padding 150ms ease;
+}
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) {
+    height:         11px;
+    padding-top:    0;
+    padding-bottom: 0;
+    overflow:       hidden;
+}
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover {
+    height:         44px;
+    padding-bottom: 4px;
+}
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) .workspace-tab-header,
+body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) .workspace-tab-header svg {
+    opacity: 0;
 }
 
 /*------------------------------------------------------------------------------*/
 /* @settings
-name: Gruvmeplease ⟡
-id: grubbed
+name: AbsoluteGruv ⟡
+id: absolutegruv
 settings:
     -
      id: show-hide-elements
@@ -847,30 +575,36 @@ settings:
      id: show-sidebar-tabs
      title: Permanently show the Sidebar Tabs
      type: class-toggle
-     description: When false, the Sidebar Tabs become visible upon hovering.
+     description: When false, sidebar tabs appear on hover only.
      default: false
     -
      id: show-titlebar
      title: Re-enable Title Bar
      type: class-toggle
-     description: Enable this to have a title bar, for example to move the Obsidian window
+     description: Enable to show the title bar (e.g. to drag window).
      default: false
     -
      id: show-scrollbar
      title: Re-enable Scrollbars
      type: class-toggle
-     description: When false, only the scroll bars in the Editor are shown.
+     description: When false, scrollbars are hidden.
      default: false
-    - 
+    -
      id: collapsed-borders
-     title: Re-enable collapsed panes' borders
+     title: Re-enable collapsed pane borders
      type: class-toggle
-     description: When false, collapsed panes' borders won't show.
+     description: When false, collapsed pane borders are hidden.
      default: false
     -
      id: status-bar-border
      title: Re-enable status bar border
      type: class-toggle
-     description: When false, status bar's border won't show.
+     description: When false, status bar border is hidden.
+     default: false
+    -
+     id: left-aligned-embeds
+     title: Left-align images and embeds
+     type: class-toggle
+     description: When false, images are centred.
      default: false
 */
