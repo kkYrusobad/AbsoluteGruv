@@ -5,8 +5,7 @@
 
 /* ── 1. Fonts ─────────────────────────────────────────────── */
 body {
-	--font-monospace-default:
-		"JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+	--font-monospace-default: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
 	--font-text-theme: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
 	-webkit-font-smoothing: auto;
 }
@@ -716,9 +715,12 @@ settings:
         allowEmpty: false
         default: palette-original
         options:
-            - palette-original
-            - palette-hybrid
-            - palette-strict
+            - label: Original
+              value: palette-original
+            - label: Hybrid
+              value: palette-hybrid
+            - label: Strict
+              value: palette-strict
     -
         id: show-hide-elements
         title: 🙈 Show/Hide UI Elements
