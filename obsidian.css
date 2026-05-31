@@ -711,7 +711,7 @@ settings:
      id: palette-variant
      title: 🎨 Palette Variant
      description: Switch between Gruvbox palette variants. Original = high contrast dark bg + vibrant accents. Hybrid = softer bg, same vibrant accents. Strict = full sainnhe Material palette, most muted.
-     type: class-dropdown
+     type: class-select
      allowEmpty: false
      default: palette-original
      options:
