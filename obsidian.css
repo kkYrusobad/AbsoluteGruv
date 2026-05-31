@@ -715,16 +715,9 @@ settings:
         allowEmpty: false
         default: palette-original
         options:
-            -
-                label: Original Gruvbox
-                value: palette-original
-            -
-                label: Hybrid (soft bg + vibrant)
-                value: palette-hybrid
-            -
-                label: Strict Material Dark Soft
-                value: palette-strict
-    -
+            - palette-original
+            - palette-hybrid
+            - palette-strict
      id: show-hide-elements
      title: 🙈 Show/Hide UI Elements
      description: Re-enable elements hidden by this theme
