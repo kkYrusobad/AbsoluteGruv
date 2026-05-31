@@ -5,7 +5,8 @@
 
 /* ── 1. Fonts ─────────────────────────────────────────────── */
 body {
-	--font-monospace-default: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+	--font-monospace-default:
+		"JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
 	--font-text-theme: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
 	-webkit-font-smoothing: auto;
 }
@@ -718,46 +719,47 @@ settings:
             - palette-original
             - palette-hybrid
             - palette-strict
-     id: show-hide-elements
-     title: 🙈 Show/Hide UI Elements
-     description: Re-enable elements hidden by this theme
-     type: heading
-     level: 1
-     collapsed: true
     -
-     id: hide-sidebar-tabs
-     title: Auto-hide Sidebar Tabs
-     type: class-toggle
-     description: When enabled, tabs collapse to a thin strip and only appear on hover. Off by default — tabs always visible.
-     default: false
+        id: show-hide-elements
+        title: 🙈 Show/Hide UI Elements
+        description: Re-enable elements hidden by this theme
+        type: heading
+        level: 1
+        collapsed: true
     -
-     id: show-titlebar
-     title: Re-enable Title Bar
-     type: class-toggle
-     description: Enable to show the title bar (e.g. to drag window).
-     default: false
+        id: hide-sidebar-tabs
+        title: Auto-hide Sidebar Tabs
+        type: class-toggle
+        description: When enabled, tabs collapse to a thin strip and only appear on hover. Off by default — tabs always visible.
+        default: false
     -
-     id: show-scrollbar
-     title: Re-enable Scrollbars
-     type: class-toggle
-     description: When false, scrollbars are hidden.
-     default: false
+        id: show-titlebar
+        title: Re-enable Title Bar
+        type: class-toggle
+        description: Enable to show the title bar (e.g. to drag window).
+        default: false
     -
-     id: collapsed-borders
-     title: Re-enable collapsed pane borders
-     type: class-toggle
-     description: When false, collapsed pane borders are hidden.
-     default: false
+        id: show-scrollbar
+        title: Re-enable Scrollbars
+        type: class-toggle
+        description: When false, scrollbars are hidden.
+        default: false
     -
-     id: status-bar-border
-     title: Re-enable status bar border
-     type: class-toggle
-     description: When false, status bar border is hidden.
-     default: false
+        id: collapsed-borders
+        title: Re-enable collapsed pane borders
+        type: class-toggle
+        description: When false, collapsed pane borders are hidden.
+        default: false
     -
-     id: left-aligned-embeds
-     title: Left-align images and embeds
-     type: class-toggle
-     description: When false, images are centred.
-     default: false
+        id: status-bar-border
+        title: Re-enable status bar border
+        type: class-toggle
+        description: When false, status bar border is hidden.
+        default: false
+    -
+        id: left-aligned-embeds
+        title: Left-align images and embeds
+        type: class-toggle
+        description: When false, images are centred.
+        default: false
 */
