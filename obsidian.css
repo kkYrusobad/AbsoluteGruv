@@ -540,22 +540,22 @@ body:not(.show-titlebar) .titlebar { display: none; }
 .theme-dark:not(.show-titlebar):not(.is-mobile),
 .theme-light:not(.show-titlebar):not(.is-mobile) { padding: 0 !important; }
 
-/* ── 27. Sidebar tabs (auto-hide) ─────────────────────────── */
-body:not(.show-sidebar-tabs) .workspace-tab-header-container {
+/* ── 27. Sidebar tabs (always visible by default) ──────────── */
+body.hide-sidebar-tabs .workspace-tab-header-container {
     transition: height 150ms ease, padding 150ms ease;
 }
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) {
+body.hide-sidebar-tabs .workspace-tab-header-container:not(:hover) {
     height:         11px;
     padding-top:    0;
     padding-bottom: 0;
     overflow:       hidden;
 }
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:hover {
+body.hide-sidebar-tabs .workspace-tab-header-container:hover {
     height:         44px;
     padding-bottom: 4px;
 }
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) .workspace-tab-header,
-body:not(.show-sidebar-tabs) .workspace-tab-header-container:not(:hover) .workspace-tab-header svg {
+body.hide-sidebar-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header,
+body.hide-sidebar-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header svg {
     opacity: 0;
 }
 
@@ -572,10 +572,10 @@ settings:
      level: 1
      collapsed: true
     -
-     id: show-sidebar-tabs
-     title: Permanently show the Sidebar Tabs
+     id: hide-sidebar-tabs
+     title: Auto-hide Sidebar Tabs
      type: class-toggle
-     description: When false, sidebar tabs appear on hover only.
+     description: When enabled, tabs collapse to a thin strip and only appear on hover. Off by default — tabs always visible.
      default: false
     -
      id: show-titlebar
