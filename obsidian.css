@@ -5,558 +5,701 @@
 
 /* ── 1. Fonts ─────────────────────────────────────────────── */
 body {
-    --font-monospace-default: "Source Code Pro", monospace;
-    --font-text-theme:        "Source Code Pro", monospace;
-    -webkit-font-smoothing:   auto;
+	--font-monospace-default: "Source Code Pro", monospace;
+	--font-text-theme: "Source Code Pro", monospace;
+	-webkit-font-smoothing: auto;
 }
 
 /* ── 2. Raw palette ───────────────────────────────────────── */
 :root {
-    /* Gruvbox Material Dark Soft backgrounds */
-    --gruv-bg0:     #1d2021;
-    --gruv-bg:      #282828;
-    --gruv-bg1:     #3c3836;
-    --gruv-bg2:     #504945;
-    --gruv-bg3:     #665c54;
-    --gruv-bg4:     #7c6f64;
-    --gruv-bg5:     #928374;
+	/* Gruvbox Material Dark Soft backgrounds */
+	--gruv-bg0: #1d2021;
+	--gruv-bg: #282828;
+	--gruv-bg1: #3c3836;
+	--gruv-bg2: #504945;
+	--gruv-bg3: #665c54;
+	--gruv-bg4: #7c6f64;
+	--gruv-bg5: #928374;
 
-    /* Gruvbox Material Dark Soft foregrounds */
-    --gruv-fg:      #ebdbb2;
-    --gruv-grey0:   #7f897d;
-    --gruv-grey1:   #859289;
-    --gruv-grey2:   #9aa79d;
+	/* Gruvbox Material Dark Soft foregrounds */
+	--gruv-fg: #ebdbb2;
+	--gruv-grey0: #7f897d;
+	--gruv-grey1: #859289;
+	--gruv-grey2: #9aa79d;
 
-    /* Vivid accent colours */
-    --gruv-red:     #fb4934;
-    --gruv-orange:  #fe8019;
-    --gruv-yellow:  #fabd2f;
-    --gruv-green:   #b8bb26;
-    --gruv-aqua:    #8ec07c;
-    --gruv-blue:    #83a598;
-    --gruv-purple:  #d3869b;
+	/* Vivid accent colours */
+	--gruv-red: #fb4934;
+	--gruv-orange: #fe8019;
+	--gruv-yellow: #fabd2f;
+	--gruv-green: #b8bb26;
+	--gruv-aqua: #8ec07c;
+	--gruv-blue: #83a598;
+	--gruv-purple: #d3869b;
 
-    /* Dimmed accent colours */
-    --gruv-dim-red:    #cc241d;
-    --gruv-dim-orange: #d65d0e;
-    --gruv-dim-yellow: #d79921;
-    --gruv-dim-green:  #98971a;
-    --gruv-dim-aqua:   #689d6a;
-    --gruv-dim-blue:   #458588;
-    --gruv-dim-purple: #b16286;
+	/* Dimmed accent colours */
+	--gruv-dim-red: #cc241d;
+	--gruv-dim-orange: #d65d0e;
+	--gruv-dim-yellow: #d79921;
+	--gruv-dim-green: #98971a;
+	--gruv-dim-aqua: #689d6a;
+	--gruv-dim-blue: #458588;
+	--gruv-dim-purple: #b16286;
 
-    /* Misc */
-    --gruv-visual:  #503946;
-    --gruv-shadow:  #00000070;
+	/* Misc */
+	--gruv-visual: #503946;
+	--gruv-shadow: #00000070;
 
-    /* Light palette */
-    --gruv-bg-l:    #fdf6e3;
-    --gruv-bg1-l:   #f6f1dd;
-    --gruv-bg2-l:   #f3efda;
-    --gruv-bg3-l:   #edead5;
-    --gruv-bg4-l:   #e4e1cd;
-    --gruv-bg5-l:   #dfdbc8;
-    --gruv-fg-l:    #5c6a72;
-    --gruv-grey1-l: #939f91;
+	/* ── Intermediate backgrounds (Obsidian base-05/20/30) */
+	--gruv-bg-alt1: #222526;
+	--gruv-bg-alt2: #2e2c2b;
+	--gruv-bg-alt3: #46403d;
+	--gruv-bg-l-alt1: #d4cebe;
+	--gruv-bg-l-alt2: #b8b2a5;
+	--gruv-bg-l-alt3: #7d8681;
+	--gruv-bg-l-alt4: #677269;
 
-    --gruv-light-red:    #f85552;
-    --gruv-light-orange: #f57d26;
-    --gruv-light-yellow: #bf983d;
-    --gruv-light-green:  #899c40;
-    --gruv-light-aqua:   #569d79;
-    --gruv-light-blue:   #5a93a2;
-    --gruv-light-purple: #b87b9d;
+	/* Light palette */
+	--gruv-bg-l: #fdf6e3;
+	--gruv-bg1-l: #f6f1dd;
+	--gruv-bg2-l: #f3efda;
+	--gruv-bg3-l: #edead5;
+	--gruv-bg4-l: #e4e1cd;
+	--gruv-bg5-l: #dfdbc8;
+	--gruv-fg-l: #5c6a72;
+	--gruv-grey1-l: #939f91;
+
+	--gruv-light-red: #f85552;
+	--gruv-light-orange: #f57d26;
+	--gruv-light-yellow: #bf983d;
+	--gruv-light-green: #899c40;
+	--gruv-light-aqua: #569d79;
+	--gruv-light-blue: #5a93a2;
+	--gruv-light-purple: #b87b9d;
 }
 
 /* ── 3. Dark theme ────────────────────────────────────────── */
 .theme-dark {
-    /* ── Base color scale (Obsidian v1.4+ system) */
-    --color-base-00:  var(--gruv-bg0);
-    --color-base-05:  #222526;
-    --color-base-10:  var(--gruv-bg);
-    --color-base-20:  #2e2c2b;
-    --color-base-25:  var(--gruv-bg1);
-    --color-base-30:  #46403d;
-    --color-base-35:  var(--gruv-bg2);
-    --color-base-40:  var(--gruv-bg3);
-    --color-base-50:  var(--gruv-bg4);
-    --color-base-60:  var(--gruv-bg5);
-    --color-base-70:  var(--gruv-grey1);
-    --color-base-100: var(--gruv-fg);
+	/* ── Base color scale (Obsidian v1.4+ system) */
+	--color-base-00: var(--gruv-bg0);
+	--color-base-05: var(--gruv-bg-alt1);
+	--color-base-10: var(--gruv-bg);
+	--color-base-20: var(--gruv-bg-alt2);
+	--color-base-25: var(--gruv-bg1);
+	--color-base-30: var(--gruv-bg-alt3);
+	--color-base-35: var(--gruv-bg2);
+	--color-base-40: var(--gruv-bg3);
+	--color-base-50: var(--gruv-bg4);
+	--color-base-60: var(--gruv-bg5);
+	--color-base-70: var(--gruv-grey1);
+	--color-base-100: var(--gruv-fg);
 
-    /* ── Extended colours */
-    --color-red:    var(--gruv-red);
-    --color-orange: var(--gruv-orange);
-    --color-yellow: var(--gruv-yellow);
-    --color-green:  var(--gruv-green);
-    --color-cyan:   var(--gruv-aqua);
-    --color-blue:   var(--gruv-blue);
-    --color-purple: var(--gruv-purple);
+	/* ── Extended colours */
+	--color-red: var(--gruv-red);
+	--color-orange: var(--gruv-orange);
+	--color-yellow: var(--gruv-yellow);
+	--color-green: var(--gruv-green);
+	--color-cyan: var(--gruv-aqua);
+	--color-blue: var(--gruv-blue);
+	--color-purple: var(--gruv-purple);
 
-    /* ── Accent (HSL of --gruv-aqua #8ec07c) */
-    --accent-h: 107;
-    --accent-s: 30%;
-    --accent-l: 62%;
+	/* ── Accent (HSL of --gruv-aqua #8ec07c) */
+	--accent-h: 107;
+	--accent-s: 30%;
+	--accent-l: 62%;
 
-    /* ── Surfaces */
-    --background-primary:               var(--gruv-bg);
-    --background-primary-alt:           var(--gruv-bg0);
-    --background-secondary:             var(--gruv-bg0);
-    --background-secondary-alt:         var(--gruv-bg0);
-    --background-modifier-hover:        rgba(92,84,76,0.35);
-    --background-modifier-active-hover: rgba(92,84,76,0.5);
-    --background-modifier-border:       var(--gruv-bg2);
-    --background-modifier-border-hover: var(--gruv-bg3);
-    --background-modifier-border-focus: var(--gruv-dim-aqua);
-    --background-modifier-form-field:   var(--gruv-bg1);
+	/* ── Surfaces */
+	--background-primary: var(--gruv-bg);
+	--background-primary-alt: var(--gruv-bg0);
+	--background-secondary: var(--gruv-bg0);
+	--background-secondary-alt: var(--gruv-bg0);
+	--background-modifier-hover: rgba(92, 84, 76, 0.35);
+	--background-modifier-active-hover: rgba(92, 84, 76, 0.5);
+	--background-modifier-border: var(--gruv-bg2);
+	--background-modifier-border-hover: var(--gruv-bg3);
+	--background-modifier-border-focus: var(--gruv-dim-aqua);
+	--background-modifier-form-field: var(--gruv-bg1);
 
-    /* ── Text */
-    --text-normal:        var(--gruv-fg);
-    --text-muted:         var(--gruv-grey2);
-    --text-faint:         var(--gruv-grey1);
-    --text-accent:        var(--gruv-dim-aqua);
-    --text-accent-hover:  var(--gruv-aqua);
-    --text-on-accent:     var(--gruv-bg);
-    --text-selection:     rgba(80,73,69,0.7);
-    --text-highlight-bg:  rgba(215,153,33,0.25);
+	/* ── Text */
+	--text-normal: var(--gruv-fg);
+	--text-muted: var(--gruv-grey2);
+	--text-faint: var(--gruv-grey1);
+	--text-accent: var(--gruv-dim-aqua);
+	--text-accent-hover: var(--gruv-aqua);
+	--text-on-accent: var(--gruv-bg);
+	--text-selection: rgba(80, 73, 69, 0.7);
+	--text-highlight-bg: rgba(215, 153, 33, 0.25);
 
-    /* ── Links */
-    --link-color:              var(--gruv-dim-aqua);
-    --link-color-hover:        var(--gruv-aqua);
-    --link-decoration:         none;
-    --link-decoration-hover:   underline;
-    --link-external-color:     var(--gruv-blue);
-    --link-external-color-hover: var(--gruv-aqua);
-    --link-external-decoration: none;
-    --link-unresolved-color:   var(--gruv-grey2);
-    --link-unresolved-opacity: 0.8;
+	/* ── Links */
+	--link-color: var(--gruv-dim-aqua);
+	--link-color-hover: var(--gruv-aqua);
+	--link-decoration: none;
+	--link-decoration-hover: underline;
+	--link-external-color: var(--gruv-blue);
+	--link-external-color-hover: var(--gruv-aqua);
+	--link-external-decoration: none;
+	--link-unresolved-color: var(--gruv-grey2);
+	--link-unresolved-opacity: 0.8;
 
-    /* ── Headings */
-    --h1-color: var(--gruv-dim-red);
-    --h2-color: var(--gruv-dim-orange);
-    --h3-color: var(--gruv-dim-yellow);
-    --h4-color: var(--gruv-dim-green);
-    --h5-color: var(--gruv-dim-aqua);
-    --h6-color: var(--gruv-dim-purple);
+	/* ── Headings */
+	--h1-color: var(--gruv-dim-red);
+	--h2-color: var(--gruv-dim-orange);
+	--h3-color: var(--gruv-dim-yellow);
+	--h4-color: var(--gruv-dim-green);
+	--h5-color: var(--gruv-dim-aqua);
+	--h6-color: var(--gruv-dim-purple);
 
-    --h1-size:   2.0em;
-    --h2-size:   1.6em;
-    --h3-size:   1.35em;
-    --h4-size:   1.2em;
-    --h5-size:   1.1em;
-    --h6-size:   1.0em;
+	--h1-size: 2em;
+	--h2-size: 1.6em;
+	--h3-size: 1.35em;
+	--h4-size: 1.2em;
+	--h5-size: 1.1em;
+	--h6-size: 1em;
 
-    --h1-weight: 500;
-    --h2-weight: 500;
-    --h3-weight: 500;
-    --h4-weight: 500;
-    --h5-weight: 500;
-    --h6-weight: 500;
+	--h1-weight: 500;
+	--h2-weight: 500;
+	--h3-weight: 500;
+	--h4-weight: 500;
+	--h5-weight: 500;
+	--h6-weight: 500;
 
-    /* ── Code */
-    --code-background:  var(--gruv-bg1);
-    --code-normal:      var(--gruv-fg);
-    --code-comment:     var(--gruv-grey1);
-    --code-function:    var(--gruv-green);
-    --code-important:   var(--gruv-red);
-    --code-keyword:     var(--gruv-red);
-    --code-operator:    var(--gruv-aqua);
-    --code-property:    var(--gruv-blue);
-    --code-punctuation: var(--gruv-fg);
-    --code-string:      var(--gruv-yellow);
-    --code-tag:         var(--gruv-orange);
-    --code-value:       var(--gruv-purple);
-    --code-size:        0.9em;
+	/* ── Code */
+	--code-background: var(--gruv-bg1);
+	--code-normal: var(--gruv-fg);
+	--code-comment: var(--gruv-grey1);
+	--code-function: var(--gruv-green);
+	--code-important: var(--gruv-red);
+	--code-keyword: var(--gruv-red);
+	--code-operator: var(--gruv-aqua);
+	--code-property: var(--gruv-blue);
+	--code-punctuation: var(--gruv-fg);
+	--code-string: var(--gruv-yellow);
+	--code-tag: var(--gruv-orange);
+	--code-value: var(--gruv-purple);
+	--code-size: 0.9em;
 
-    /* ── Interactive */
-    --interactive-normal:       var(--gruv-bg1);
-    --interactive-hover:        var(--gruv-bg2);
-    --interactive-accent:       var(--gruv-dim-aqua);
-    --interactive-accent-hover: var(--gruv-aqua);
+	/* ── Interactive */
+	--interactive-normal: var(--gruv-bg1);
+	--interactive-hover: var(--gruv-bg2);
+	--interactive-accent: var(--gruv-dim-aqua);
+	--interactive-accent-hover: var(--gruv-aqua);
 
-    /* ── Caret */
-    --caret-color: var(--gruv-blue);
+	/* ── Caret */
+	--caret-color: var(--gruv-blue);
 
-    /* ── Tag */
-    --tag-color:              var(--gruv-fg);
-    --tag-background:         rgba(69,133,136,0.2);
-    --tag-background-hover:   rgba(69,133,136,0.35);
-    --tag-border-color:       var(--gruv-dim-blue);
-    --tag-border-color-hover: var(--gruv-blue);
+	/* ── Tag */
+	--tag-color: var(--gruv-fg);
+	--tag-background: rgba(69, 133, 136, 0.2);
+	--tag-background-hover: rgba(69, 133, 136, 0.35);
+	--tag-border-color: var(--gruv-dim-blue);
+	--tag-border-color-hover: var(--gruv-blue);
 
-    /* ── Scrollbar */
-    --scrollbar-bg:     transparent;
-    --scrollbar-thumb-bg: var(--gruv-bg3);
+	/* ── Scrollbar */
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: var(--gruv-bg3);
 
-    /* Legacy compat (some plugins still read these) */
-    --text-a:      var(--gruv-dim-aqua);
-    --text-a-hover: var(--gruv-aqua);
-    --text-link:   var(--gruv-blue);
-    --inline-code: var(--gruv-blue);
-    --pre-code:    var(--gruv-bg1);
-    --code-block:  var(--gruv-fg);
-    --vim-cursor:  var(--gruv-blue);
-    --text-mark:   rgba(215,153,33,0.25);
+	/* Legacy compat (some plugins still read these) */
+	--text-a: var(--gruv-dim-aqua);
+	--text-a-hover: var(--gruv-aqua);
+	--text-link: var(--gruv-blue);
+	--inline-code: var(--gruv-blue);
+	--pre-code: var(--gruv-bg1);
+	--code-block: var(--gruv-fg);
+	--vim-cursor: var(--gruv-blue);
+	--text-mark: rgba(215, 153, 33, 0.25);
 }
 
 /* ── 4. Light theme ───────────────────────────────────────── */
 .theme-light {
-    --color-base-00:  var(--gruv-bg-l);
-    --color-base-05:  var(--gruv-bg1-l);
-    --color-base-10:  var(--gruv-bg2-l);
-    --color-base-20:  var(--gruv-bg3-l);
-    --color-base-25:  var(--gruv-bg4-l);
-    --color-base-30:  var(--gruv-bg5-l);
-    --color-base-35:  #d4cebe;
-    --color-base-40:  #b8b2a5;
-    --color-base-50:  var(--gruv-grey1-l);
-    --color-base-60:  #7d8681;
-    --color-base-70:  #677269;
-    --color-base-100: var(--gruv-fg-l);
+	--color-base-00: var(--gruv-bg-l);
+	--color-base-05: var(--gruv-bg1-l);
+	--color-base-10: var(--gruv-bg2-l);
+	--color-base-20: var(--gruv-bg3-l);
+	--color-base-25: var(--gruv-bg4-l);
+	--color-base-30: var(--gruv-bg5-l);
+	--color-base-35: var(--gruv-bg-l-alt1);
+	--color-base-40: var(--gruv-bg-l-alt2);
+	--color-base-50: var(--gruv-grey1-l);
+	--color-base-60: var(--gruv-bg-l-alt3);
+	--color-base-70: var(--gruv-bg-l-alt4);
+	--color-base-100: var(--gruv-fg-l);
 
-    --accent-h: 107;
-    --accent-s: 28%;
-    --accent-l: 40%;
+	--accent-h: 107;
+	--accent-s: 28%;
+	--accent-l: 40%;
 
-    --background-primary:             var(--gruv-bg-l);
-    --background-primary-alt:         var(--gruv-bg1-l);
-    --background-secondary:           var(--gruv-bg2-l);
-    --background-secondary-alt:       var(--gruv-bg3-l);
-    --background-modifier-hover:      rgba(180,170,140,0.3);
-    --background-modifier-border:     var(--gruv-bg5-l);
-    --background-modifier-form-field: var(--gruv-bg1-l);
+	--background-primary: var(--gruv-bg-l);
+	--background-primary-alt: var(--gruv-bg1-l);
+	--background-secondary: var(--gruv-bg2-l);
+	--background-secondary-alt: var(--gruv-bg3-l);
+	--background-modifier-hover: rgba(180, 170, 140, 0.3);
+	--background-modifier-border: var(--gruv-bg5-l);
+	--background-modifier-form-field: var(--gruv-bg1-l);
 
-    --text-normal:       var(--gruv-fg-l);
-    --text-muted:        var(--gruv-grey1-l);
-    --text-faint:        #a4ad9e;
-    --text-accent:       var(--gruv-light-blue);
-    --text-accent-hover: var(--gruv-light-aqua);
-    --text-selection:    rgba(189,174,147,0.45);
-    --text-highlight-bg: rgba(215,153,33,0.25);
+	--text-normal: var(--gruv-fg-l);
+	--text-muted: var(--gruv-grey1-l);
+	--text-faint: #a4ad9e;
+	--text-accent: var(--gruv-light-blue);
+	--text-accent-hover: var(--gruv-light-aqua);
+	--text-selection: rgba(189, 174, 147, 0.45);
+	--text-highlight-bg: rgba(215, 153, 33, 0.25);
 
-    --link-color:             var(--gruv-light-blue);
-    --link-color-hover:       var(--gruv-light-aqua);
-    --link-decoration:        none;
-    --link-decoration-hover:  underline;
-    --link-external-color:    var(--gruv-light-blue);
-    --link-unresolved-color:  var(--gruv-grey1-l);
-    --link-unresolved-opacity: 0.75;
+	--link-color: var(--gruv-light-blue);
+	--link-color-hover: var(--gruv-light-aqua);
+	--link-decoration: none;
+	--link-decoration-hover: underline;
+	--link-external-color: var(--gruv-light-blue);
+	--link-unresolved-color: var(--gruv-grey1-l);
+	--link-unresolved-opacity: 0.75;
 
-    --h1-color: var(--gruv-light-red);
-    --h2-color: var(--gruv-light-orange);
-    --h3-color: var(--gruv-light-yellow);
-    --h4-color: var(--gruv-light-green);
-    --h5-color: var(--gruv-light-aqua);
-    --h6-color: var(--gruv-light-purple);
+	--h1-color: var(--gruv-light-red);
+	--h2-color: var(--gruv-light-orange);
+	--h3-color: var(--gruv-light-yellow);
+	--h4-color: var(--gruv-light-green);
+	--h5-color: var(--gruv-light-aqua);
+	--h6-color: var(--gruv-light-purple);
 
-    --h1-size:   2.0em;
-    --h2-size:   1.6em;
-    --h3-size:   1.35em;
-    --h4-size:   1.2em;
-    --h5-size:   1.1em;
-    --h6-size:   1.0em;
+	--h1-size: 2em;
+	--h2-size: 1.6em;
+	--h3-size: 1.35em;
+	--h4-size: 1.2em;
+	--h5-size: 1.1em;
+	--h6-size: 1em;
 
-    --h1-weight: 500;
-    --h2-weight: 500;
-    --h3-weight: 500;
-    --h4-weight: 500;
-    --h5-weight: 500;
-    --h6-weight: 500;
+	--h1-weight: 500;
+	--h2-weight: 500;
+	--h3-weight: 500;
+	--h4-weight: 500;
+	--h5-weight: 500;
+	--h6-weight: 500;
 
-    --code-background:  var(--gruv-bg1-l);
-    --code-normal:      var(--gruv-fg-l);
-    --code-comment:     var(--gruv-grey1-l);
-    --code-function:    var(--gruv-light-green);
-    --code-important:   var(--gruv-light-red);
-    --code-keyword:     var(--gruv-light-red);
-    --code-operator:    var(--gruv-light-aqua);
-    --code-property:    var(--gruv-light-blue);
-    --code-punctuation: var(--gruv-fg-l);
-    --code-string:      var(--gruv-light-yellow);
-    --code-tag:         var(--gruv-light-orange);
-    --code-value:       var(--gruv-light-purple);
-    --code-size:        0.9em;
+	--code-background: var(--gruv-bg1-l);
+	--code-normal: var(--gruv-fg-l);
+	--code-comment: var(--gruv-grey1-l);
+	--code-function: var(--gruv-light-green);
+	--code-important: var(--gruv-light-red);
+	--code-keyword: var(--gruv-light-red);
+	--code-operator: var(--gruv-light-aqua);
+	--code-property: var(--gruv-light-blue);
+	--code-punctuation: var(--gruv-fg-l);
+	--code-string: var(--gruv-light-yellow);
+	--code-tag: var(--gruv-light-orange);
+	--code-value: var(--gruv-light-purple);
+	--code-size: 0.9em;
 
-    --interactive-normal:       var(--gruv-bg1-l);
-    --interactive-hover:        var(--gruv-bg2-l);
-    --interactive-accent:       var(--gruv-light-aqua);
-    --interactive-accent-hover: var(--gruv-light-blue);
+	--interactive-normal: var(--gruv-bg1-l);
+	--interactive-hover: var(--gruv-bg2-l);
+	--interactive-accent: var(--gruv-light-aqua);
+	--interactive-accent-hover: var(--gruv-light-blue);
 
-    --caret-color: var(--gruv-light-blue);
+	--caret-color: var(--gruv-light-blue);
 
-    --tag-color:              var(--gruv-fg-l);
-    --tag-background:         rgba(86,157,121,0.15);
-    --tag-background-hover:   rgba(86,157,121,0.3);
-    --tag-border-color:       var(--gruv-light-aqua);
+	--tag-color: var(--gruv-fg-l);
+	--tag-background: rgba(86, 157, 121, 0.15);
+	--tag-background-hover: rgba(86, 157, 121, 0.3);
+	--tag-border-color: var(--gruv-light-aqua);
 
-    /* Legacy compat */
-    --inline-code: var(--gruv-light-blue);
-    --pre-code:    var(--gruv-bg1-l);
-    --code-block:  var(--gruv-fg-l);
-    --vim-cursor:  var(--gruv-light-blue);
+	/* Legacy compat */
+	--inline-code: var(--gruv-light-blue);
+	--pre-code: var(--gruv-bg1-l);
+	--code-block: var(--gruv-fg-l);
+	--vim-cursor: var(--gruv-light-blue);
 }
 
-/* ── 5. Typography ────────────────────────────────────────── */
-html, body { font-size: 16px; }
+/* ── 5. Palette variants ───────────────────────────────────── */
+/* Original Gruvbox: hard dark bg + bright accents (default) */
+body.palette-original {
+	/* No overrides needed — :root values are the original palette */
+}
+/* Hybrid: Dark Soft backgrounds + Original Gruvbox vibrant accents */
+body.palette-hybrid {
+	--gruv-bg0: #252423;
+	--gruv-bg-alt1: #2b2a29;
+	--gruv-bg: #32302f;
+	--gruv-bg-alt2: #373534;
+	--gruv-bg-alt3: #46413e;
+	--gruv-bg-l: #fbf1c7;
+	--gruv-bg1-l: #f4e8be;
+	--gruv-bg2-l: #f2e5bc;
+	--gruv-bg3-l: #eee0b7;
+	--gruv-bg4-l: #e5d5ad;
+	--gruv-bg5-l: #ddccab;
+	--gruv-bg-l-alt1: #dac9a5;
+	--gruv-bg-l-alt2: #c9bb9b;
+	--gruv-bg-l-alt3: #b0a690;
+	--gruv-bg-l-alt4: #a09784;
+	--gruv-grey1-l: #a89984;
+	--gruv-fg-l: #654735;
+	--gruv-grey0: #7f897d;
+	--gruv-grey1: #859289;
+	--gruv-grey2: #9aa79d;
+}
+/* Strict: Full sainnhe Gruvbox Material Dark Soft palette */
+body.palette-strict {
+	--gruv-bg0: #252423;
+	--gruv-bg-alt1: #2b2a29;
+	--gruv-bg: #32302f;
+	--gruv-bg-alt2: #373534;
+	--gruv-bg-alt3: #46413e;
+	--gruv-bg2: #504945;
+	--gruv-bg-l: #fbf1c7;
+	--gruv-bg1-l: #f4e8be;
+	--gruv-bg2-l: #f2e5bc;
+	--gruv-bg3-l: #eee0b7;
+	--gruv-bg4-l: #e5d5ad;
+	--gruv-bg5-l: #ddccab;
+	--gruv-bg-l-alt1: #dac9a5;
+	--gruv-bg-l-alt2: #c9bb9b;
+	--gruv-bg-l-alt3: #b0a690;
+	--gruv-bg-l-alt4: #a09784;
+	--gruv-grey1-l: #a89984;
+	--gruv-fg-l: #654735;
+	--gruv-light-red: #c14a4a;
+	--gruv-light-orange: #c35e0a;
+	--gruv-light-yellow: #b47109;
+	--gruv-light-green: #6c782e;
+	--gruv-light-aqua: #4c7a5d;
+	--gruv-light-blue: #45707a;
+	--gruv-light-purple: #945e80;
+	--gruv-fg: #d4be98;
+	--gruv-grey0: #7c6f64;
+	--gruv-grey1: #928374;
+	--gruv-grey2: #a89984;
+	--gruv-red: #ea6962;
+	--gruv-orange: #e78a4e;
+	--gruv-yellow: #d8a657;
+	--gruv-green: #a9b665;
+	--gruv-aqua: #89b482;
+	--gruv-blue: #7daea3;
+	--gruv-dim-red: #d45d56;
+	--gruv-dim-orange: #d67d44;
+	--gruv-dim-yellow: #c9984a;
+	--gruv-dim-green: #99a85a;
+	--gruv-dim-aqua: #7ba875;
+	--gruv-dim-blue: #6d9d95;
+	--gruv-dim-purple: #b87588;
+	--gruv-shadow: #00000050;
+}
 
-strong { font-weight: 600; }
+/* ── 6. Typography ────────────────────────────────────────── */
+html,
+body {
+	font-size: 16px;
+}
 
-/* ── 6. Editor — CM6 selectors ───────────────────────────── */
+strong {
+	font-weight: 600;
+}
+
+/* ── 7. Editor — CM6 selectors ───────────────────────────── */
 
 /* Inline code (CM6 editing view) */
 .cm-s-obsidian .cm-inline-code {
-    color:            var(--gruv-blue);
-    background-color: var(--code-background);
-    border-radius:    3px;
-    padding:          1px 4px;
+	color: var(--gruv-blue);
+	background-color: var(--code-background);
+	border-radius: 3px;
+	padding: 1px 4px;
 }
 
 /* Monospace for editor */
-.cm-editor, .cm-line {
-    font-family: var(--font-monospace-default);
+.cm-editor,
+.cm-line {
+	font-family: var(--font-monospace-default);
 }
 
 /* Bold text colour in editor */
 .cm-s-obsidian .cm-strong {
-    color: var(--gruv-fg);
+	color: var(--gruv-fg);
 }
 
-/* ── 7. Reading view ──────────────────────────────────────── */
+/* ── 8. Reading view ──────────────────────────────────────── */
 
 /* Inline code */
 .markdown-rendered code,
 .markdown-preview-view code {
-    font-size:        var(--code-size);
-    color:            var(--gruv-blue);
-    background-color: var(--code-background);
-    border-radius:    3px;
-    padding:          1px 4px;
+	font-size: var(--code-size);
+	color: var(--gruv-blue);
+	background-color: var(--code-background);
+	border-radius: 3px;
+	padding: 1px 4px;
 }
 
 /* Code blocks */
 .markdown-rendered pre code,
 .markdown-preview-view pre code {
-    font-size:   var(--code-size);
-    color:       var(--code-normal);
-    background:  transparent;
-    padding:     0;
-    border-radius: 0;
+	font-size: var(--code-size);
+	color: var(--code-normal);
+	background: transparent;
+	padding: 0;
+	border-radius: 0;
 }
 
 .markdown-rendered pre,
 .markdown-preview-view pre {
-    background-color: var(--code-background);
-    border-radius:    6px;
-    padding:          12px 16px;
+	background-color: var(--code-background);
+	border-radius: 6px;
+	padding: 12px 16px;
 }
 
 /* Bold in reading view */
 .markdown-rendered strong,
 .markdown-preview-view strong {
-    color:       var(--gruv-fg);
-    font-weight: 600;
+	color: var(--gruv-fg);
+	font-weight: 600;
 }
 
 /* Mark / highlight */
 .markdown-rendered mark,
 .markdown-preview-view mark {
-    background-color: var(--text-highlight-bg);
-    color: inherit;
+	background-color: var(--text-highlight-bg);
+	color: inherit;
 }
 
-/* ── 8. Links ─────────────────────────────────────────────── */
+/* ── 9. Links ─────────────────────────────────────────────── */
 /* Variables handle most link styling; these guard edge-cases */
 a.internal-link,
-.cm-hmd-internal-link { text-decoration: none; }
+.cm-hmd-internal-link {
+	text-decoration: none;
+}
 
-/* ── 9. Graph ─────────────────────────────────────────────── */
+/* ── 10. Graph ─────────────────────────────────────────────── */
 .graph-view.color-circle,
 .graph-view.color-fill-highlight,
-.graph-view.color-line-highlight { color: var(--gruv-dim-aqua) !important; }
+.graph-view.color-line-highlight {
+	color: var(--gruv-dim-aqua) !important;
+}
 
-.graph-view.color-text { color: var(--gruv-aqua) !important; }
+.graph-view.color-text {
+	color: var(--gruv-aqua) !important;
+}
 
-.graph-view.color-line { color: var(--gruv-bg2) !important; }
+.graph-view.color-line {
+	color: var(--gruv-bg2) !important;
+}
 
-/* ── 10. Workspace chrome ─────────────────────────────────── */
+/* ── 11. Workspace chrome ─────────────────────────────────── */
 
 /* Vertical resize handle */
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
 .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
-    width:            1px;
-    background-color: var(--background-modifier-border);
+	width: 1px;
+	background-color: var(--background-modifier-border);
 }
 
 /* Horizontal resize handle */
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
-    height:           1px;
-    background-color: var(--background-modifier-border);
+	height: 1px;
+	background-color: var(--background-modifier-border);
 }
 
 /* Remove vertical split padding */
 .workspace-split.mod-root .workspace-split.mod-vertical .workspace-leaf-content,
 .workspace-split.mod-vertical > .workspace-split,
 .workspace-split.mod-vertical > .workspace-leaf,
-.workspace-tabs { padding-right: 0; }
+.workspace-tabs {
+	padding-right: 0;
+}
 
-.workspace-tabs .workspace-leaf { border-color: transparent; }
+.workspace-tabs .workspace-leaf {
+	border-color: transparent;
+}
 
-/* ── 11. Sidebar / ribbon ─────────────────────────────────── */
-.workspace-ribbon { border-right: none; border-left: none; }
+/* ── 12. Sidebar / ribbon ─────────────────────────────────── */
+.workspace-ribbon {
+	border-right: none;
+	border-left: none;
+}
 
 .side-dock-title {
-    padding-top: 15px;
-    font-size:   20px;
+	padding-top: 15px;
+	font-size: 20px;
 }
 
 .nav-action-button:hover,
 .side-dock-ribbon-tab:hover,
 .side-dock-ribbon-action:hover,
-.side-dock-collapse-btn:hover { color: var(--text-accent); }
+.side-dock-collapse-btn:hover {
+	color: var(--text-accent);
+}
 
 /* Active nav file */
 .nav-file-title.is-active {
-    background-color: var(--background-modifier-hover);
-    color:            var(--text-normal);
-    border-radius:    4px;
+	background-color: var(--background-modifier-hover);
+	color: var(--text-normal);
+	border-radius: 4px;
 }
 
 .nav-file-title-content,
 .nav-folder-title-content {
-    white-space:   nowrap;
-    text-overflow: ellipsis;
-    overflow:      hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
-/* ── 12. File header / tab title ──────────────────────────── */
-.view-header-title  { font-weight: 700; }
-.inline-title       { color: var(--h1-color); font-weight: 500; }
+/* ── 13. File header / tab title ──────────────────────────── */
+.view-header-title {
+	font-weight: 700;
+}
+.inline-title {
+	color: var(--h1-color);
+	font-weight: 500;
+}
 
-/* ── 13. Tables ───────────────────────────────────────────── */
-th { font-weight: 600; }
-thead { border-bottom: 2px solid var(--background-modifier-border); }
+/* ── 14. Tables ───────────────────────────────────────────── */
+th {
+	font-weight: 600;
+}
+thead {
+	border-bottom: 2px solid var(--background-modifier-border);
+}
 
-/* ── 14. Checkboxes / task list ───────────────────────────── */
+/* ── 15. Checkboxes / task list ───────────────────────────── */
 input.task-list-item-checkbox {
-    border:             1px solid var(--gruv-blue);
-    appearance:         none;
-    -webkit-appearance: none;
-    width:              16px;
-    height:             16px;
-    border-radius:      3px;
-    background:         transparent;
+	border: 1px solid var(--gruv-blue);
+	appearance: none;
+	-webkit-appearance: none;
+	width: 16px;
+	height: 16px;
+	border-radius: 3px;
+	background: transparent;
 }
 
 input.task-list-item-checkbox:checked {
-    background-color: var(--gruv-dim-blue);
-    box-shadow:       inset 0 0 0 2px var(--background-primary);
-    border-color:     var(--gruv-blue);
+	background-color: var(--gruv-dim-blue);
+	box-shadow: inset 0 0 0 2px var(--background-primary);
+	border-color: var(--gruv-blue);
 }
 
-/* ── 15. Suggestion / autocomplete ───────────────────────── */
+/* ── 16. Suggestion / autocomplete ───────────────────────── */
 .suggestion-item.is-selected {
-    background-color: var(--background-modifier-hover);
+	background-color: var(--background-modifier-hover);
 }
 
-/* ── 16. Bullet relationship lines ────────────────────────── */
-.cm-hmd-list-indent .cm-tab { position: relative; }
+/* ── 17. Bullet relationship lines ────────────────────────── */
+.cm-hmd-list-indent .cm-tab {
+	position: relative;
+}
 .cm-hmd-list-indent .cm-tab::before {
-    content:      '';
-    border-left:  1px solid var(--gruv-dim-blue);
-    position:     absolute;
-    left:         0;
-    top:          -5px;
-    bottom:       -4px;
+	content: "";
+	border-left: 1px solid var(--gruv-dim-blue);
+	position: absolute;
+	left: 0;
+	top: -5px;
+	bottom: -4px;
 }
 
-ul ul { position: relative; }
+ul ul {
+	position: relative;
+}
 ul ul::before {
-    content:      '';
-    border-left:  1px solid var(--gruv-dim-blue);
-    position:     absolute;
-    left:         -11px;
-    top:          0;
-    bottom:       0;
+	content: "";
+	border-left: 1px solid var(--gruv-dim-blue);
+	position: absolute;
+	left: -11px;
+	top: 0;
+	bottom: 0;
 }
 
-/* ── 17. Embeds ───────────────────────────────────────────── */
-.markdown-embed-title { font-weight: 600; }
+/* ── 18. Embeds ───────────────────────────────────────────── */
+.markdown-embed-title {
+	font-weight: 600;
+}
 
 .markdown-embed {
-    padding-left:  10px;
-    padding-right: 10px;
-    margin-left:   10px;
-    margin-right:  10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
-/* ── 18. Selection ────────────────────────────────────────── */
-::selection { background-color: var(--text-selection); }
+/* ── 19. Selection ────────────────────────────────────────── */
+::selection {
+	background-color: var(--text-selection);
+}
 
-/* ── 19. Properties (frontmatter) ─────────────────────────── */
+/* ── 20. Properties (frontmatter) ─────────────────────────── */
 /* Hide raw frontmatter block in reading view (old compat) */
-.frontmatter-container { display: none; }
-
-/* ── 20. Mermaid ──────────────────────────────────────────── */
-.mermaid { font-size: 0.9em; }
-
-/* ── 21. Scrollbar ────────────────────────────────────────── */
-body:not(.show-scrollbar) ::-webkit-scrollbar { display: none; }
-
-/* ── 22. Image centering ──────────────────────────────────── */
-body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
-    margin-right: auto;
-    margin-left:  auto;
-    display:      block;
+.frontmatter-container {
+	display: none;
 }
 
-body:not(.left-aligned-embeds) div.mermaid { text-align: center; }
+/* ── 21. Mermaid ──────────────────────────────────────────── */
+.mermaid {
+	font-size: 0.9em;
+}
 
-/* ── 23. Collapsed sidebar borders ───────────────────────── */
+/* ── 22. Scrollbar ────────────────────────────────────────── */
+body:not(.show-scrollbar) ::-webkit-scrollbar {
+	display: none;
+}
+
+/* ── 23. Image centering ──────────────────────────────────── */
+body:not(.left-aligned-embeds) .view-content img:not(.link-favicon) {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+
+body:not(.left-aligned-embeds) div.mermaid {
+	text-align: center;
+}
+
+/* ── 24. Collapsed sidebar borders ───────────────────────── */
 body:not(.collapsed-borders) .workspace-ribbon.mod-left.is-collapsed {
-    border-right-color: var(--background-secondary-alt);
+	border-right-color: var(--background-secondary-alt);
 }
 body:not(.collapsed-borders) .workspace-ribbon.mod-right.is-collapsed {
-    border-left-color: var(--background-secondary-alt);
+	border-left-color: var(--background-secondary-alt);
 }
 
-/* ── 24. Status bar ───────────────────────────────────────── */
+/* ── 25. Status bar ───────────────────────────────────────── */
 body:not(.status-bar-border) .status-bar {
-    border-top-color: var(--background-secondary-alt);
+	border-top-color: var(--background-secondary-alt);
 }
 
-/* ── 25. CTA buttons ──────────────────────────────────────── */
+/* ── 26. CTA buttons ──────────────────────────────────────── */
 .mod-cta {
-    color:       var(--background-primary) !important;
-    font-weight: 600 !important;
+	color: var(--background-primary) !important;
+	font-weight: 600 !important;
 }
 .mod-cta:hover {
-    background-color: var(--interactive-accent-hover) !important;
+	background-color: var(--interactive-accent-hover) !important;
 }
 
-/* ── 26. Titlebar (hidden by default) ────────────────────── */
-body:not(.show-titlebar) .titlebar { display: none; }
+/* ── 27. Titlebar (hidden by default) ────────────────────── */
+body:not(.show-titlebar) .titlebar {
+	display: none;
+}
 
 .theme-dark:not(.show-titlebar):not(.is-mobile),
-.theme-light:not(.show-titlebar):not(.is-mobile) { padding: 0 !important; }
+.theme-light:not(.show-titlebar):not(.is-mobile) {
+	padding: 0 !important;
+}
 
-/* ── 27. Sidebar tabs (always visible by default) ──────────── */
+/* ── 28. Sidebar tabs (always visible by default) ──────────── */
 body.hide-sidebar-tabs .workspace-tab-header-container {
-    transition: height 150ms ease, padding 150ms ease;
+	transition:
+		height 150ms ease,
+		padding 150ms ease;
 }
 body.hide-sidebar-tabs .workspace-tab-header-container:not(:hover) {
-    height:         11px;
-    padding-top:    0;
-    padding-bottom: 0;
-    overflow:       hidden;
+	height: 11px;
+	padding-top: 0;
+	padding-bottom: 0;
+	overflow: hidden;
 }
 body.hide-sidebar-tabs .workspace-tab-header-container:hover {
-    height:         44px;
-    padding-bottom: 4px;
+	height: 44px;
+	padding-bottom: 4px;
 }
-body.hide-sidebar-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header,
-body.hide-sidebar-tabs .workspace-tab-header-container:not(:hover) .workspace-tab-header svg {
-    opacity: 0;
+body.hide-sidebar-tabs
+	.workspace-tab-header-container:not(:hover)
+	.workspace-tab-header,
+body.hide-sidebar-tabs
+	.workspace-tab-header-container:not(:hover)
+	.workspace-tab-header
+	svg {
+	opacity: 0;
 }
 
 /*------------------------------------------------------------------------------*/
@@ -564,6 +707,23 @@ body.hide-sidebar-tabs .workspace-tab-header-container:not(:hover) .workspace-ta
 name: AbsoluteGruv ⟡
 id: absolutegruv
 settings:
+    -
+     id: palette-variant
+     title: 🎨 Palette Variant
+     description: Switch between Gruvbox palette variants. Original = high contrast dark bg + vibrant accents. Hybrid = softer bg, same vibrant accents. Strict = full sainnhe Material palette, most muted.
+     type: class-dropdown
+     allowEmpty: false
+     default: palette-original
+     options:
+        -
+            label: Original Gruvbox
+            value: palette-original
+        -
+            label: Hybrid (soft bg + vibrant)
+            value: palette-hybrid
+        -
+            label: Strict Material Dark Soft
+            value: palette-strict
     -
      id: show-hide-elements
      title: 🙈 Show/Hide UI Elements
